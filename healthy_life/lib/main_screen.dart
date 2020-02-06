@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'register_page.dart';
 
 class MainScreen extends StatefulWidget{
   @override
@@ -11,11 +12,16 @@ class MainScreen extends StatefulWidget{
 class _MainScreen extends State<MainScreen>{
   @override
   Widget build(BuildContext context) {
+    
+    
+    Future navigateToSubPage(context) async {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+    }
 
     final top_text = Container(
       width: MediaQuery.of(context).size.width,
       alignment: Alignment.centerLeft,
-      height: 400,
+      height: 150,
       margin: EdgeInsets.only(top: 50, left: 20),
       child: Column(
         children: <Widget>[
@@ -41,7 +47,7 @@ class _MainScreen extends State<MainScreen>{
     );
 
     final logo = Container(
-      child: AssetImage("/assets/images/main-logo.png"),
+      child: Image(image: AssetImage("assets/images/main-logo.png"))
     );
 
 
@@ -51,7 +57,14 @@ class _MainScreen extends State<MainScreen>{
       backgroundColor: Theme.of(context).backgroundColor,
       body: Column(
         children: <Widget>[
-          top_text
+          top_text,
+          logo,
+          RaisedButton(
+            child: Text("OK"),
+            onPressed: () {
+              navigateToSubPage(context);
+            },
+          )
         ],
       )
     );
