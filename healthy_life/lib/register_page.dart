@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'main_screen.dart';
 
 
 class RegisterPage extends StatefulWidget{
@@ -15,7 +16,7 @@ class _RegisterPage extends State<RegisterPage>{
   Widget build(BuildContext context) {
 
     Future goToWorkout(context) async {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => WorkoutPage()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()));
     }
 
     // TODO: implement build
@@ -178,7 +179,7 @@ class _RegisterPage extends State<RegisterPage>{
         ),
         child: RaisedButton(
           onPressed: (){
-            goToWorkout(context)
+            goToWorkout(context);
           },
           child: Text("Siguiente",
             style: TextStyle(

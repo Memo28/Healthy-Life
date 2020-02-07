@@ -1,72 +1,61 @@
 import 'package:flutter/material.dart';
-import 'register_page.dart';
+import 'workout_page/main_workout.dart';
 
 class MainScreen extends StatefulWidget{
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     return _MainScreen();
   }
+
 }
 
 class _MainScreen extends State<MainScreen>{
+  int indexTap = 0;
+
+  final List<Widget> screenList = [
+    MainWorkout(),
+    MainWorkout(),
+    MainWorkout()
+  ];
+
+  void onTapped (int index) {
+    setState(() {
+      indexTap = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    
-    
-    Future navigateToSubPage(context) async {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
-    }
-
-    final top_text = Container(
-      width: MediaQuery.of(context).size.width,
-      alignment: Alignment.centerLeft,
-      height: 150,
-      margin: EdgeInsets.only(top: 50, left: 20),
-      child: Column(
-        children: <Widget>[
-          Text(
-            "HEALTHY LIFE",
-            style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 40,
-                fontFamily: "Righteous",
-                color: Theme.of(context).primaryColor
-            ),
-          ),
-          Text(
-            "Tu asistente virtual",
-            style: TextStyle(
-                fontSize: 20,
-                fontFamily: "Righteous",
-                color: Theme.of(context).primaryColor
-            ),
-          )
-        ],
-      )
-    );
-
-    final logo = Container(
-      child: Image(image: AssetImage("assets/images/main-logo.png"))
-    );
-
-
-
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
-      body: Column(
-        children: <Widget>[
-          top_text,
-          logo,
-          RaisedButton(
-            child: Text("OK"),
-            onPressed: () {
-              navigateToSubPage(context);
-            },
+      body: screenList[indexTap],
+      bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(
+            primaryColor: Theme.of(context).primaryColor,
+            canvasColor: Colors.white
+          ),
+          child: BottomNavigationBar(
+              currentIndex: indexTap,
+              onTap: onTapped,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.local_dining),
+                  title: Text("Dieta")
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.fitness_center),
+                    title: Text("Entrenamiento")
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person),
+                    title: Text("Perfil")
+                )
+              ],
+
           )
-        ],
-      )
+      ),
     );
   }
 

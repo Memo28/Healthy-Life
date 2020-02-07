@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'main_screen.dart';
+import 'start_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color(0xFFEDFDF5),
         textSelectionColor: Color(0xFF707070)
       ),
-      home: MainScreen(),
+      home: StartScreen(),
     );
   }
 }
