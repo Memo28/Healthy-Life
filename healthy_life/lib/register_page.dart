@@ -23,7 +23,7 @@ class _RegisterPage extends State<RegisterPage>{
     final app_name = Container(
       width: MediaQuery.of(context).size.width,
       height: 100,
-      margin: EdgeInsets.only(top: 80),
+      margin: EdgeInsets.only(top: 30),
       alignment: Alignment.center,
       child: Text(
         "HEALTHY LIFE",
@@ -38,17 +38,14 @@ class _RegisterPage extends State<RegisterPage>{
 
     final image_picker = InkWell(
       child: Container(
-        margin:
-        EdgeInsets.only(bottom: 10.0, left: 20.0, right: 20.0),
         height: 150.0,
-        width: 150.0,
         child: Icon(
           Icons.person,
           color: Theme.of(context).textSelectionColor,
           size: 100,
         ),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(180.0),
+            shape: BoxShape.circle,
             border: Border.all(
                 color: Theme.of(context).textSelectionColor,
                 width: 0.5
@@ -73,7 +70,7 @@ class _RegisterPage extends State<RegisterPage>{
     final input_name = Container(
       width: MediaQuery.of(context).size.width * 0.85,
       alignment: Alignment.center,
-      margin: EdgeInsets.only(bottom: 10.0, top: 30),
+      margin: EdgeInsets.only(bottom: 10.0, top: 30 , left: 30, right: 30),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
@@ -96,7 +93,7 @@ class _RegisterPage extends State<RegisterPage>{
     final input_age = Container(
       width: MediaQuery.of(context).size.width * 0.85,
       alignment: Alignment.center,
-      margin: EdgeInsets.only(bottom: 10.0, top: 10),
+      margin: EdgeInsets.only(bottom: 10.0, top: 10, left: 30, right: 30),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
@@ -161,7 +158,7 @@ class _RegisterPage extends State<RegisterPage>{
     );
 
     final measures = Container(
-      margin: EdgeInsets.only(left: 30, right: 31),
+      margin: EdgeInsets.only(left: 30, right: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -174,7 +171,7 @@ class _RegisterPage extends State<RegisterPage>{
     final submit_button = Container(
         width: MediaQuery.of(context).size.width * 0.8,
         height: 50,
-        margin: EdgeInsets.only(top: 60),
+        margin: EdgeInsets.only(top: 60 , left: 30, right: 30, bottom: 20),
         decoration: BoxDecoration(
         ),
         child: RaisedButton(
@@ -195,7 +192,7 @@ class _RegisterPage extends State<RegisterPage>{
 
     return Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,
-        body: Column(
+        body: ListView(
           children: <Widget>[
             app_name,
             image_picker,
@@ -205,7 +202,7 @@ class _RegisterPage extends State<RegisterPage>{
             measures,
             submit_button
           ],
-        ),
+        )
     );
   }
 
