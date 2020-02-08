@@ -12,7 +12,7 @@ class MainScreen extends StatefulWidget{
 }
 
 class _MainScreen extends State<MainScreen>{
-  int indexTap = 0;
+  int indexTap = 1;
 
   final List<Widget> screenList = [
     MainWorkout(),

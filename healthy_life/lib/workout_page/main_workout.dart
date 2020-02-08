@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'workout_card.dart';
+import 'workout_list.dart';
 
 class MainWorkout extends StatefulWidget{
   @override
@@ -17,6 +18,7 @@ class _MainWorkout extends State<MainWorkout>{
 
     final gradient = Container(
       height: 270.0,
+      alignment: Alignment(-0.85, -0.5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25)),
           gradient: LinearGradient(
@@ -30,34 +32,39 @@ class _MainWorkout extends State<MainWorkout>{
               tileMode: TileMode.clamp
           )
       ),
-      child: Text(
-        title,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 20.0,
-          fontFamily: "Righteous",
-        ),
-      ),
-      alignment: Alignment(-0.85, -0.5),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(top:40.0, left: 15, bottom: 10),
+            child: Text(
+              title,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20.0,
+                fontFamily: "Righteous",
+              ),
+            ),
+          ),
+          Align(
+              alignment: Alignment.center,
+              child: WorkoutCard()
+          )
+        ],
+      )
     );
 
 
     // TODO: implement build
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
-      body: Column(
-        children: <Widget>[
-          Stack(
+      body: Stack(
           children: <Widget>[
+            Container(),
+            WorkoutList(),
             gradient,
-            Align(
-              alignment: Alignment.center,
-              child: WorkoutCard(),
-              )
             ],
           )
-        ],
-      ),
     );
   }
 

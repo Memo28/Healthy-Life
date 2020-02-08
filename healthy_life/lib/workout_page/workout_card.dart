@@ -18,11 +18,8 @@ class _WorkoutCard extends State<WorkoutCard>{
   Widget build(BuildContext context) {
     final card = Container(
       height: 130,
+      margin: EdgeInsets.only(top: 20.0, left: 20.0),
       width: MediaQuery.of(context).size.width  * 0.75,
-      margin: EdgeInsets.only(
-        top: 100.0,
-        left: 20.0,
-      ),
       decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
