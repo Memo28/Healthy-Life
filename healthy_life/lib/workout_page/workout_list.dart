@@ -16,7 +16,7 @@ class _WorkoutList extends State<WorkoutList>{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
-      margin: EdgeInsets.only(top: 250),
+      margin: EdgeInsets.only(top: 260),
       child: ListView(
         children: <Widget>[
           WorkoutCard(),

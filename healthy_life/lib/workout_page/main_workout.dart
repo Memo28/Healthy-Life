@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'workout_card.dart';
 import 'workout_list.dart';
+import 'create_workout.dart';
 
 class MainWorkout extends StatefulWidget{
   @override
@@ -16,8 +17,12 @@ class _MainWorkout extends State<MainWorkout>{
   Widget build(BuildContext context) {
     String title = "Tu plan de entrenamiento";
 
+    Future goToCreateWorkout (context) async {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => CreateWorkout()));
+    }
+
     final gradient = Container(
-      height: 270.0,
+      height: 300.0,
       alignment: Alignment(-0.85, -0.5),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25)),
@@ -49,7 +54,29 @@ class _MainWorkout extends State<MainWorkout>{
           Align(
               alignment: Alignment.center,
               child: WorkoutCard()
-          )
+          ),
+          Align(
+              alignment: Alignment.center,
+              child: Container(
+                margin: EdgeInsets.all(10),
+                child: FlatButton(
+                  onPressed: (){
+                    goToCreateWorkout(context);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                        "Generar Entramiento",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontFamily: "Righteous"
+                        ),
+                    ),
+                  ),
+                ),
+              )
+          ),
         ],
       )
     );
