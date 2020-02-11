@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'workout_overview.dart';
 
 class CreateWorkout extends StatefulWidget{
   @override
@@ -14,6 +15,10 @@ class _CreateWorkout extends State<CreateWorkout>{
 
   @override
   Widget build(BuildContext context) {
+    
+    Future workoutOverview(context) async {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => WorkoutOverview()));
+    }
 
     final imageText = Container(
       alignment: Alignment.center,
@@ -127,7 +132,7 @@ class _CreateWorkout extends State<CreateWorkout>{
       ),
     );
 
-    final input_weight = Container(
+    final inputWeight = Container(
       width: MediaQuery.of(context).size.width * 0.37,
       margin: EdgeInsets.only(bottom: 10.0, top: 10),
       decoration: BoxDecoration(
@@ -149,7 +154,7 @@ class _CreateWorkout extends State<CreateWorkout>{
       ),
     );
 
-    final input_height = Container(
+    final inputHeight = Container(
       width: MediaQuery.of(context).size.width * 0.37,
       margin: EdgeInsets.only(bottom: 10.0, top: 10),
       decoration: BoxDecoration(
@@ -176,13 +181,13 @@ class _CreateWorkout extends State<CreateWorkout>{
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          input_weight,
-          input_height
+          inputWeight,
+          inputHeight
         ],
       ),
     );
 
-    final submit_button = Container(
+    final submitButton = Container(
         width: MediaQuery.of(context).size.width * 0.8,
         height: 50,
         margin: EdgeInsets.only(top: 60 , left: 30, right: 30, bottom: 20),
@@ -190,7 +195,7 @@ class _CreateWorkout extends State<CreateWorkout>{
         ),
         child: RaisedButton(
           onPressed: (){
-//            goToWorkout(context);
+            workoutOverview(context);
           },
           child: Text("Generar",
             style: TextStyle(
@@ -228,7 +233,7 @@ class _CreateWorkout extends State<CreateWorkout>{
           selectTarget,
           inputNumberOfWeeks,
           measures,
-          submit_button
+          submitButton
         ],
       ),
     );
