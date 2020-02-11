@@ -16,7 +16,14 @@ class _WorkoutListOverview extends State<WorkoutListOverview>{
     // TODO: implement build
     return ListView(
       children: <Widget>[
-        WorkoutCardOverview(4,'F','K')
+        WorkoutCardOverview(4,'LUN','Pierna'),
+        WorkoutCardOverview(4,'MAR','Brazo'),
+        WorkoutCardOverview(4,'MIE','Pierna'),
+        WorkoutCardOverview(4,'JUE','Brazo'),
+        WorkoutCardOverview(4,'VIE','Pierna'),
+        WorkoutCardOverview(4,'SAB','Brazo'),
+        WorkoutCardOverview(4,'VIE','Pierna'),
+        WorkoutCardOverview(4,'SAB','Brazo')
       ],
     );
   }
