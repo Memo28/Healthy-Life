@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class TextFormat extends StatelessWidget{
   String text = "Text";
   double font_size = 16.0;
+  int color = 0;
 
-  TextFormat(this.text, this.font_size);
+
+  TextFormat(this.text, this.font_size, this.color);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -13,7 +15,7 @@ class TextFormat extends StatelessWidget{
       child: Text(
         text,
         style: TextStyle(
-          color: Colors.white,
+          color: color == 0 ? Colors.white : Theme.of(context).textSelectionColor,
           fontFamily: "Righteous",
           fontSize: font_size
         ),

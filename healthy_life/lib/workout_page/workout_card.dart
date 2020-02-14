@@ -38,9 +38,9 @@ class _WorkoutCard extends State<WorkoutCard>{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          TextFormat("Cuerpo de playa", 25.0),
-          TextFormat("Entrenamientos completos", 19.0),
-          TextFormat("16/20", 20.0)
+          TextFormat("Cuerpo de playa", 25.0, 0),
+          TextFormat("Entrenamientos completos", 19.0, 0),
+          TextFormat("16/20", 20.0, 0)
         ],
       ),
     );

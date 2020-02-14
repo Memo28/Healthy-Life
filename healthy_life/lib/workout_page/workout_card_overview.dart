@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'workout_day.dart';
+import 'exercises_screen.dart';
 
 class WorkoutCardOverview extends StatelessWidget{
   int totalExercises = 10;
@@ -9,7 +9,7 @@ class WorkoutCardOverview extends StatelessWidget{
   WorkoutCardOverview(this.totalExercises, this.day, this.focusGroup);
   
   Future goToWorkout(context) async {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => WorkoutDay()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => ExercisesScreen()));
   }
 
   @override
