@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'diet_card.dart';
+import 'diet_list.dart';
 
 class MainDiet extends StatefulWidget{
   @override
@@ -86,6 +87,7 @@ class _MainDiet extends State<MainDiet>{
         body: Stack(
           children: <Widget>[
             Container(),
+            DietList(),
             gradient,
           ],
         )
