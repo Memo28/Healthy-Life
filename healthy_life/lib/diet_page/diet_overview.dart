@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthy_life/workout_page/text_format.dart';
+import 'meal_screen.dart';
+
 class DietOverview extends StatefulWidget{
   String meal_time = "Desayuno";
   String meal_name = "Ensalada de espinacas";
@@ -19,6 +21,11 @@ class _DietOverview extends State<DietOverview>{
   Widget build(BuildContext context) {
     // TODO: implement build
     final pathImage = 'assets/images/salad.jpg';
+
+
+    Future goToMealInformation(context) async {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => MealScreen()));
+    }
 
     final image = Container(
       height: 120,
@@ -71,7 +78,10 @@ class _DietOverview extends State<DietOverview>{
       ),
     );
 
-    return Container(
+    return InkWell(
+      onTap: () {
+        goToMealInformation(context);
+      },
       child: Column(
         children: <Widget>[
           TextFormat(widget.meal_time, 15, 1),
