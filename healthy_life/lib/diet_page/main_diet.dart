@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'diet_card.dart';
 import 'diet_list.dart';
+import 'create_diet.dart';
 
 class MainDiet extends StatefulWidget{
   @override
@@ -18,9 +19,9 @@ class _MainDiet extends State<MainDiet>{
 
     String title = "Tu plan alimenticio";
 
-//    Future goToCreateWorkout (context) async {
-//      Navigator.push(context, MaterialPageRoute(builder: (context) => CreateWorkout()));
-//    }
+    Future goToCreateDiet (context) async {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => CreateDiet()));
+    }
 
     final gradient = Container(
         height: 300.0,
@@ -62,7 +63,7 @@ class _MainDiet extends State<MainDiet>{
                   margin: EdgeInsets.all(10),
                   child: FlatButton(
                     onPressed: (){
-//                      goToCreateWorkout(context);
+                      goToCreateDiet(context);
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
