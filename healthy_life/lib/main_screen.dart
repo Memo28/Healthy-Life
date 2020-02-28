@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'workout_page/main_workout.dart';
 import 'diet_page/main_diet.dart';
+import 'profile_page/main_profile.dart';
 
 class MainScreen extends StatefulWidget{
 
@@ -18,7 +19,7 @@ class _MainScreen extends State<MainScreen>{
   final List<Widget> screenList = [
     MainDiet(),
     MainWorkout(),
-    MainWorkout()
+    MainProfile()
   ];
 
   void onTapped (int index) {
